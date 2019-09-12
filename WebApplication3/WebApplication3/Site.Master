@@ -78,21 +78,22 @@
                 <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/logo.jpg" BorderStyle="None" />
             </a>
         </div>
+        <%-- Category choosing --%>
         <div id="CategoryMenu" style="text-align: center">
             <asp:ListView ID="categoryList"
                 ItemType="WebApplication3.Models.Category"
                 runat="server"
                 SelectMethod="GetCategories">
                 <ItemTemplate>
-                    <b style="font-size: large; font-style: normal">
-                        <a ="/ProductList.aspx?id=<%#: Item.CategoryName  %>">
+                    <b style="font-size:large; font-style:normal">
+                        <a href="ProductList.aspx?id=<%#: Item.CategoryID %>">
                             <%#: Item.CategoryName %>
-                        </a>
                     </b>
                 </ItemTemplate>
                 <ItemSeparatorTemplate> | </ItemSeparatorTemplate>
-            </asp:ListView>
+               </asp:ListView>
         </div>
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
